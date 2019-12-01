@@ -88,6 +88,12 @@ InterstitialAd Usage
     }
 }
 
+In MainActivity
+App.instance.showInterstitial {
+    //do whatever you want
+    startActivity(Intent(this, StartActivity::class.java))
+}
+
 ```
 
 
