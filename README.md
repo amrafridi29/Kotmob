@@ -20,7 +20,7 @@ Gradle
 ```
 dependencies {
     ...
-    implementation 'com.github.amrafridi29:Kotmob:0.1.1'
+    implementation 'com.github.amrafridi29:Kotmob:$kotmob_version'
 }
 
 allprojects {
