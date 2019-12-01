@@ -62,15 +62,15 @@ Kotlin Usage
 ---
 ```
 nativeAd {
-            with(this@MainActivity)
-            adView(nativead)
-            setAdListener {
-                when(it){
-                    is OnAdListener.OnAdFailedToLoad->it.loadAgain()
-                    is OnAdListener.OnAdLoaded->it.bindAdView()
-                }
-            }
-        }.load()
+   with(this@MainActivity)
+   adView(nativead)
+   setAdListener {
+      when(it){
+       is OnAdListener.OnAdFailedToLoad->it.loadAgain()
+       is OnAdListener.OnAdLoaded->it.bindAdView()
+     }
+   }
+ }.load()
 ```
 
 
