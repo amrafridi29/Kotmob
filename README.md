@@ -100,7 +100,7 @@ NativAd Usage XML
     app:button_shape
     app:button_text_color
     app:headline_text_color
-    vbody_text_color
+    app:body_text_color
     app:is_body"
     
 ```
