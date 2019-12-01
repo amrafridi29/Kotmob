@@ -35,6 +35,36 @@ to load banner ad just add this code to your xml layout
         app:banner_ad_id="@string/banner_ad_id"
         />
 ```
+Offline Cross Promotion Ads
+---
+```
+     <com.kotmob.admoblib.ui.OfflineNativeBannerAd
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ad_title="@string/title"
+        app:ad_body="@string/body"
+        app:ad_button_text="@string/download"
+        app:headline_text_color="@color/colorPrimary"
+        app:body_text_color="@color/colorPrimary"
+        app:ad_icon="@mipmap/ic_launcher"
+        app:ad_app_url="@string/app_url"
+       />
+       
+       <com.kotmob.admoblib.ui.OfflineNativeAd
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ad_title="@string/title"
+        app:ad_body="@string/body"
+        app:ad_size="MEDIUM"
+        app:ad_button_text="@string/download"
+        app:headline_text_color="@color/colorPrimary"
+        app:body_text_color="@color/colorPrimary"
+        app:ad_icon="@mipmap/ic_launcher"
+        app:ad_feature_src="@mipmap/ic_launcher"
+        app:ad_app_url="@string/app_url"
+       />
+
+```
 
 NativAd Usage XML
 -----
