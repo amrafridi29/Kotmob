@@ -8,6 +8,12 @@ A Simple library to Load Google Native , Banner and Interstitial Admob ads
 The latest version is 
 (https://jitpack.io/#amrafridi29/Kotmob/Tag)
 
+Preview
+---
+<img src="images/banner.png" width="300" height="500"/>
+<img src="images/native_banner.png" width="300" height="500"/>
+
+
 
 Gradle
 ------
@@ -35,7 +41,7 @@ to load banner ad just add this code to your xml layout
         app:banner_ad_id="@string/banner_ad_id"
         />
 ```
-<img src="images/banner.png" width="300" height="500"/>
+
 
 Offline Cross Promotion Ads
 ---
