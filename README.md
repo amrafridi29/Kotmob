@@ -6,7 +6,7 @@ A Simple library to show Google Native , Banner and Interstitial Admob ads
 
 ## Current Release
 The latest version is 
-(/v/amrafridi29/Kotmob.svg)
+(https://jitpack.io/#amrafridi29/Kotmob/Tag)
 
 
 Gradle
