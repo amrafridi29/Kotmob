@@ -35,7 +35,7 @@ to load banner ad just add this code to your xml layout
         app:banner_ad_id="@string/banner_ad_id"
         />
 ```
-![](images/banner.png 300x600)
+<img src="images/banner.png" width="300" height="500"/>
 Offline Cross Promotion Ads
 ---
 ```
