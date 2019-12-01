@@ -1,14 +1,12 @@
 
+# Current Release
+![Release](https://jitpack.io/v/amrafridi29/Kotmob.svg)
 
-[![Release](https://jitpack.io/v/amrafridi29/Kotmob.svg)]
 (https://jitpack.io/#amrafridi29/Kotmob/Tag)
 
 # Kotmob
 A Simple library to Load Google Native , Banner and Interstitial Admob ads
 
-## Current Release
-The latest version is 
-(https://jitpack.io/#amrafridi29/Kotmob/Tag)
 
 Preview
 ---
