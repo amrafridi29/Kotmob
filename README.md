@@ -24,16 +24,21 @@ allprojects {
      }
    }
 ```
+Load Banner Ad
+---
+```
+to load banner ad just add this code to your xml layout
 
-Usage XML
------
-```xml
-   <com.kotmob.admoblib.ui.BannerAd
+<com.kotmob.admoblib.ui.BannerAd
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:banner_ad_id="@string/banner_ad_id"
         />
+```
 
+NativAd Usage XML
+-----
+```xml
     <com.kotmob.admoblib.ui.NativeBannerOptAd
         android:id="@+id/nativead"
         android:layout_width="match_parent"
