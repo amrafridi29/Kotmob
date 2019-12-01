@@ -94,6 +94,15 @@ NativAd Usage XML
         android:layout_height="wrap_content"
         app:native_ad_id="@string/native_ad_id"/>
 
+
+    Optional Xml tags
+
+    app:button_shape
+    app:button_text_color
+    app:headline_text_color
+    vbody_text_color
+    app:is_body"
+    
 ```
 
 Kotlin Usage
