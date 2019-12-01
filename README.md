@@ -25,7 +25,7 @@ allprojects {
    }
 ```
 
-Usage
+Usage XML
 -----
 ```xml
    <com.kotmob.admoblib.ui.BannerAd
@@ -56,6 +56,20 @@ Usage
         android:layout_height="wrap_content"
         app:native_ad_id="@string/native_ad_id"/>
 
+```
+
+Kotlin Usage
+```
+nativeAd {
+            with(this@MainActivity)
+            adView(nativead)
+            setAdListener {
+                when(it){
+                    is OnAdListener.OnAdFailedToLoad->it.loadAgain()
+                    is OnAdListener.OnAdLoaded->it.bindAdView()
+                }
+            }
+        }.load()
 ```
 
 
