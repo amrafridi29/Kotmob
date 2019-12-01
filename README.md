@@ -85,6 +85,7 @@ InterstitialAd Usage
 }
 
 Add this in your activity or fragment
+
 App.instance.showInterstitial {
     //do whatever you want
     startActivity(Intent(this, StartActivity::class.java))
