@@ -6,7 +6,7 @@ A Simple library to show Google Native , Banner and Interstitial Admob ads
 
 ## Current Release
 The latest version is 
-[![Maven Central](https://img.shields.io/maven-central/v/org.owasp/dependency-check-gradle.svg)](https://mvnrepository.com/artifact/org.owasp/dependency-check-gradle)
+(/v/amrafridi29/Kotmob.svg)
 
 
 Gradle
