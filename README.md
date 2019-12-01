@@ -58,7 +58,8 @@ Usage XML
 
 ```
 
-Kotlin Usage
+# Kotlin Usage
+---
 ```
 nativeAd {
             with(this@MainActivity)
