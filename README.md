@@ -35,23 +35,19 @@ Usage XML
         />
 
     <com.kotmob.admoblib.ui.NativeBannerOptAd
-        android:id="@+id/mAd"
+        android:id="@+id/nativead"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:ad_size="MEDIUM"
         app:native_ad_id="@string/native_ad_id"/>
 
     <com.kotmob.admoblib.ui.NativeGridAd
-        android:id="@+id/mAd1"
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         app:native_ad_id="@string/native_ad_id"/>
 
     <com.kotmob.admoblib.ui.NativeBannerAd
-        android:id="@+id/mAd2"
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:native_ad_id="@string/native_ad_id"/>
