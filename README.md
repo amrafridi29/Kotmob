@@ -67,6 +67,7 @@ nativeAd {
      }
    }
  }.load()
+
 ```
 InterstitialAd Usage
 ---
@@ -92,7 +93,13 @@ App.instance.showInterstitial {
 }
 
 ```
-
+Available Methods Using NativeAd
+---
+- adChoicOption(adChoiceOption: ChoiceOption)
+- isMedia(isMedia: Boolean)
+- isBody(isBody: Boolean) 
+- isIcon(isIcon: Boolean)
+- isLoader(isLoader: Boolean)
 
 Changelog
 ---------
