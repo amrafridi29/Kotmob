@@ -36,6 +36,7 @@ to load banner ad just add this code to your xml layout
         />
 ```
 <img src="images/banner.png" width="300" height="500"/>
+
 Offline Cross Promotion Ads
 ---
 ```
