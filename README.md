@@ -86,8 +86,7 @@ NativAd Usage XML
 
     <com.kotmob.admoblib.ui.NativeGridAd
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="300dp"
         app:native_ad_id="@string/native_ad_id"/>
 
     <com.kotmob.admoblib.ui.NativeBannerAd
