@@ -57,6 +57,8 @@ Usage XML
 Kotlin Usage
 ---
 ```
+call this in your activity or fragment
+
 nativeAd {
    with(this@MainActivity)
    adView(nativead)
