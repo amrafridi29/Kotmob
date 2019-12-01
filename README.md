@@ -14,7 +14,7 @@ Gradle
 ```
 dependencies {
     ...
-    implementation 'com.github.amrafridi29:Kotmob:0.1.0'
+    implementation 'com.github.amrafridi29:Kotmob:0.1.1'
 }
 
 allprojects {
