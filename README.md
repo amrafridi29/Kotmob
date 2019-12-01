@@ -27,8 +27,6 @@ allprojects {
 Load Banner Ad
 ---
 ```
-![](images/banner.png 300x600)
-
 to load banner ad just add this code to your xml layout
 
 <com.kotmob.admoblib.ui.BannerAd
@@ -37,6 +35,7 @@ to load banner ad just add this code to your xml layout
         app:banner_ad_id="@string/banner_ad_id"
         />
 ```
+![](images/banner.png)
 Offline Cross Promotion Ads
 ---
 ```
