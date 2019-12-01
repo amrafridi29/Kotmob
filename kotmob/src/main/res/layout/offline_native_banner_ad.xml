@@ -50,7 +50,6 @@
                         android:orientation="horizontal">
 
                         <com.makeramen.roundedimageview.RoundedImageView
-                            android:src="@drawable/icon"
                             android:id="@+id/ad_app_icon"
                             app:riv_corner_radius="@dimen/_10sdp"
                             android:layout_width="50dp"

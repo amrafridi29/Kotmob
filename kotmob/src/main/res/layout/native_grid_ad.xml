@@ -33,8 +33,7 @@
                 android:id="@+id/ad_media"
                 android:adjustViewBounds="true"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/img_teacher" />
+                android:layout_height="match_parent" />
 
             <TextView
                 style="@style/AdAttribution"
@@ -64,7 +63,6 @@
                         app:riv_border_width="@dimen/_1sdp"
                         android:layout_width="@dimen/_40sdp"
                         android:layout_height="@dimen/_40sdp"
-                        android:src="@drawable/icon"
                         app:riv_corner_radius="@dimen/_10sdp" />
 
                     <TextView

@@ -1,4 +1,4 @@
-package com.kotmob.admoblib
+package com.kotmob.admoblib.ads
 
 import android.content.Context
 import android.view.View
@@ -8,24 +8,26 @@ import android.widget.TextView
 import com.kotmob.admoblib.ui.NativeAdView
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.formats.*
+import com.kotmob.admoblib.R
 import com.makeramen.roundedimageview.RoundedImageView
 
 data class NativeAd(
-    var context: Context,
-    var view : NativeAdView,
-    var adChoiceOption : ChoiceOption,
-    var adListener : (OnAdListener)-> Unit,
-    var isMedia : Boolean,
-    var isBody : Boolean,
-    var isIcon : Boolean,
-    var isLoader : Boolean
+    private var context: Context,
+    private var view : NativeAdView,
+    private var adChoiceOption : ChoiceOption,
+    private var adListener : (OnAdListener)-> Unit,
+    private var isMedia : Boolean,
+    private var isBody : Boolean,
+    private var isIcon : Boolean,
+    private var isLoader : Boolean
 ){
 
     private lateinit var unifiedNativeAd : UnifiedNativeAd
     private lateinit var adView: UnifiedNativeAdView
     class Builder{
         private lateinit var view : NativeAdView
-        private var adChoiceOption : ChoiceOption = ChoiceOption.TOP_LEFT
+        private var adChoiceOption : ChoiceOption =
+            ChoiceOption.TOP_LEFT
         private lateinit var context: Context
         private  var isMedia : Boolean = true
         private var isBody : Boolean = true
@@ -43,13 +45,14 @@ data class NativeAd(
         fun setAdListener(adListener : (OnAdListener)-> Unit) = apply { this.adListener = adListener }
         fun build() = NativeAd(
             context,
-            view ,
-            adChoiceOption ,
+            view,
+            adChoiceOption,
             adListener,
             isMedia,
             isBody,
             isIcon,
-            isLoader)
+            isLoader
+        )
     }
 
     fun load(){
@@ -93,10 +96,10 @@ data class NativeAd(
             NativeAdOptions.Builder()
                 .setRequestCustomMuteThisAd(true)
                 .setAdChoicesPlacement(when(adChoiceOption){
-                    ChoiceOption.TOP_LEFT-> NativeAdOptions.ADCHOICES_TOP_LEFT
-                    ChoiceOption.TOP_RIGHT-> NativeAdOptions.ADCHOICES_TOP_RIGHT
-                    ChoiceOption.BOTTOM_LEFT-> NativeAdOptions.ADCHOICES_BOTTOM_LEFT
-                    ChoiceOption.BOTTOM_RIGHT-> NativeAdOptions.ADCHOICES_BOTTOM_RIGHT
+                    ChoiceOption.TOP_LEFT -> NativeAdOptions.ADCHOICES_TOP_LEFT
+                    ChoiceOption.TOP_RIGHT -> NativeAdOptions.ADCHOICES_TOP_RIGHT
+                    ChoiceOption.BOTTOM_LEFT -> NativeAdOptions.ADCHOICES_BOTTOM_LEFT
+                    ChoiceOption.BOTTOM_RIGHT -> NativeAdOptions.ADCHOICES_BOTTOM_RIGHT
                 })
                 .build()
         )
@@ -106,7 +109,7 @@ data class NativeAd(
 
     }
 
-    fun populateUnifiedNativeAdView() {
+    internal fun populateUnifiedNativeAdView() {
 
         //Media
         if(isMedia) {
@@ -168,25 +171,8 @@ data class NativeAd(
     }
 }
 
-sealed class OnAdListener{
-    data class OnAdLoaded(private val nativeAd: NativeAd) : OnAdListener(){
-        fun bindAdView(){
-            nativeAd.populateUnifiedNativeAdView()
-        }
-    }
-    data class OnAdFailedToLoad(val errorCode : Int, private val nativeAd: NativeAd) : OnAdListener(){
-        fun loadAgain(){
-            nativeAd.load()
-        }
-    }
-}
 
-enum class ChoiceOption{
-    TOP_LEFT ,
-    TOP_RIGHT ,
-    BOTTOM_RIGHT,
-    BOTTOM_LEFT
-}
-fun Context.nativeAd(init : NativeAd.Builder.()-> Unit) = NativeAd.Builder().apply { init() }.build()
+
+
 
 
