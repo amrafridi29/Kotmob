@@ -10,8 +10,8 @@ The latest version is
 
 Preview
 ---
-<img src="images/banner.png" width="300" height="500"/>
-<img src="images/native_banner.png" width="300" height="500"/>
+<img src="images/banner.png" width="300" height="500"/><img src="images/native_banner.png" width="300" height="500"/>
+
 
 
 
