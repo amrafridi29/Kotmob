@@ -27,6 +27,8 @@ allprojects {
 Load Banner Ad
 ---
 ```
+![](images/banner.png 300x600)
+
 to load banner ad just add this code to your xml layout
 
 <com.kotmob.admoblib.ui.BannerAd
