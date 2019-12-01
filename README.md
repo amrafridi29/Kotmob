@@ -58,7 +58,7 @@ Usage XML
 
 ```
 
-# Kotlin Usage
+Kotlin Usage
 ---
 ```
 nativeAd {
