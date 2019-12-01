@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="GlobalAttr">
+        <attr name="button_shape" format="reference" localization="suggested" />
+        <attr name="button_text_color" format="color|reference" localization="suggested" />
+        <attr name="headline_text_color" format="color|reference" localization="suggested" />
+        <attr name="body_text_color" format="color|reference" localization="suggested" />
+        <attr name="is_body" format="boolean" localization="suggested" />
+        <attr name="native_ad_id" format="string|reference" localization="suggested" />
+        <attr name="banner_ad_id" format="string|reference" localization="suggested" />
+
+        <attr name="ad_icon" format="reference" localization="suggested" />
+        <attr name="ad_feature_src" format="reference" localization="suggested" />
+        <attr name="ad_app_url" format="string" localization="suggested" />
+        <attr name="ad_title" format="string|reference" localization="suggested" />
+        <attr name="ad_body" format="string|reference" localization="suggested" />
+        <attr name="ad_button_text" format="string|reference" localization="suggested" />
+
+        <attr name="ad_size">
+            <enum name="MEDIUM" value="0" />
+            <enum name="LARGE" value="1" />
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="NativeBannerOptAd">
+        <attr name="button_shape" />
+        <attr name="button_text_color" />
+        <attr name="headline_text_color" />
+        <attr name="body_text_color" />
+        <attr name="is_body" />
+        <attr name="native_ad_id" />
+        <attr name="ad_size"/>
+    </declare-styleable>
+
+    <declare-styleable name="NativeBannerAd">
+        <attr name="button_shape" />
+        <attr name="button_text_color" />
+        <attr name="headline_text_color" />
+        <attr name="body_text_color" />
+        <attr name="is_body" />
+        <attr name="native_ad_id" />
+
+    </declare-styleable>
+
+    <declare-styleable name="NativeGridAd">
+        <attr name="button_shape" />
+        <attr name="button_text_color" />
+        <attr name="headline_text_color" />
+        <attr name="body_text_color" />
+        <attr name="is_body" />
+        <attr name="native_ad_id" />
+
+    </declare-styleable>
+
+
+    <declare-styleable name="OfflineNativeAd">
+        <attr name="button_shape"/>
+        <attr name="button_text_color" />
+        <attr name="headline_text_color" />
+        <attr name="body_text_color" />
+        <attr name="is_body" />
+
+        <attr name="ad_icon"/>
+        <attr name="ad_feature_src" />
+        <attr name="ad_app_url" />
+        <attr name="ad_title"/>
+        <attr name="ad_body" />
+        <attr name="ad_button_text"/>
+        <attr name="ad_size"/>
+
+    </declare-styleable>
+
+
+    <declare-styleable name="OfflineNativeBannerAd">
+        <attr name="button_shape"/>
+        <attr name="button_text_color" />
+        <attr name="headline_text_color" />
+        <attr name="body_text_color" />
+        <attr name="is_body" />
+
+        <attr name="ad_icon"/>
+        <attr name="ad_feature_src" />
+        <attr name="ad_app_url" />
+        <attr name="ad_title"/>
+        <attr name="ad_body" />
+        <attr name="ad_button_text"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="BannerAd">
+        <attr name="banner_ad_id" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AdmobLib</string>
+    <string name="ad_headline">Ad Headline Text</string>
+    <string name="ad_body_description">Ad Body Description</string>
+</resources>

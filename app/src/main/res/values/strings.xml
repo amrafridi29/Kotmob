@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AdsLibrary</string>
+    <string name="action_settings">Settings</string>
+    <string name="url">https://www.google.com</string>
+    <string name="title">Ad Title</string>
+    <string name="body">Ad Body</string>
+    <string name="download">Download Now</string>
+</resources>
