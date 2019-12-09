@@ -161,7 +161,7 @@ Changelog
 * **0.1.1**
     * Remove Bugs
 * **0.1.3**
-  * Improve interstitial ads loading and offline support
+  * Improve interstitial ads loading and add offline support to native ads loading
 
 License
 -------
