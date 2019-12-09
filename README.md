@@ -133,7 +133,7 @@ Available Methods Using NativeAd
 InterstitialAd Usage
 ---
 ```
- class App : AdsApplication(){
+ class App : Application(){
 
 
     override fun onCreate() {
