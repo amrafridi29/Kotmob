@@ -42,11 +42,18 @@ class NativeBannerOptAd (context: Context, attrs: AttributeSet): NativeAdView(co
            NativeAdSize.MEDIUM-> resources.getDimensionPixelSize(R.dimen._100sdp)
            NativeAdSize.LARGE->resources.getDimensionPixelSize(R.dimen._150sdp)
        }
-       val params = ad_parent_view.getLayoutParams()
+       val params = ad_parent_view.layoutParams
        params.height = height
-       ad_parent_view.setLayoutParams(params)
+       ad_parent_view.layoutParams = params
        invalidate()
        attributes.recycle()
    }
+
+    override fun hideAd() {
+        val params = ad_parent_view.layoutParams
+        params.height = resources.getDimensionPixelSize(R.dimen._0dp)
+        ad_parent_view.layoutParams = params
+        invalidate()
+    }
 }
 

@@ -1,8 +1,8 @@
 package com.kotmob.admob
 
-import com.kotmob.admoblib.AdsApplication
+import com.kotmob.admoblib.KotMobApplication
 
-class App : AdsApplication(){
+class App : KotMobApplication(){
 
     companion object {
         lateinit var instance: App

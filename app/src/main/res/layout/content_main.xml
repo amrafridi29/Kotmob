@@ -10,6 +10,7 @@
     tools:showIn="@layout/activity_main">
 
     <com.kotmob.admoblib.ui.BannerAd
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:banner_ad_id="@string/banner_ad_id"
@@ -41,6 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:ad_title="@string/title"
+        android:visibility="gone"
         app:ad_body="@string/body"
         app:ad_button_text="@string/download"
         app:headline_text_color="@color/colorPrimary"

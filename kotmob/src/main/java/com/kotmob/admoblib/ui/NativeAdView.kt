@@ -3,6 +3,7 @@ package com.kotmob.admoblib.ui
 import android.content.Context
 import android.graphics.Color
 import android.util.AttributeSet
+import android.view.View
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import com.google.android.gms.ads.formats.UnifiedNativeAdView
@@ -16,4 +17,6 @@ abstract class NativeAdView (context : Context, attrs : AttributeSet) : LinearLa
 
     val nativeAdId
         get() = mNativeAdId
+
+     abstract fun hideAd()
 }

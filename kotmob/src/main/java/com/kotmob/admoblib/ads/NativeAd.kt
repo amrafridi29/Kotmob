@@ -9,6 +9,7 @@ import com.kotmob.admoblib.ui.NativeAdView
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.formats.*
 import com.kotmob.admoblib.R
+import com.kotmob.admoblib.isOnline
 import com.makeramen.roundedimageview.RoundedImageView
 
 data class NativeAd(
@@ -34,7 +35,6 @@ data class NativeAd(
         private var isIcon : Boolean = true
         private var isLoader : Boolean = false
         private lateinit var adListener : (OnAdListener)-> Unit
-
         fun with(context: Context) = apply { this.context = context }
         fun adView(view : NativeAdView) = apply { this.view = view }
         fun adChoicOption(adChoiceOption: ChoiceOption) = apply { this.adChoiceOption = adChoiceOption }
@@ -57,55 +57,61 @@ data class NativeAd(
 
     fun load(){
 
-        if(isLoader){
-            view.visibility = View.VISIBLE
-            view.progressBar?.visibility = View.VISIBLE
-            view.unifiedNativeAdView?.visibility = View.GONE
-        }else{
-            view.visibility = View.GONE
-            view.progressBar?.visibility = View.GONE
-        }
+        view.context.isOnline {
+            if(it){
+                if(isLoader){
+                    view.visibility = View.VISIBLE
+                    view.progressBar?.visibility = View.VISIBLE
+                    view.unifiedNativeAdView?.visibility = View.GONE
+                }else{
+                    view.visibility = View.GONE
+                    view.progressBar?.visibility = View.GONE
+                }
 
-        val builder = AdLoader.Builder(context, view.nativeAdId)
+                val builder = AdLoader.Builder(context, view.nativeAdId)
 
-        builder.forUnifiedNativeAd { unifiedNativeAd ->
-            view.visibility = View.VISIBLE
-            view.progressBar?.visibility = View.GONE
-            view.unifiedNativeAdView?.visibility = View.VISIBLE
-            this.unifiedNativeAd = unifiedNativeAd
-            this.adView = view.unifiedNativeAdView!!
-            adListener(OnAdListener.OnAdLoaded(this))
-        }
+                builder.forUnifiedNativeAd { unifiedNativeAd ->
+                    view.visibility = View.VISIBLE
+                    view.progressBar?.visibility = View.GONE
+                    view.unifiedNativeAdView?.visibility = View.VISIBLE
+                    this.unifiedNativeAd = unifiedNativeAd
+                    this.adView = view.unifiedNativeAdView!!
+                    adListener(OnAdListener.OnAdLoaded(this))
+                }
 
-        val videoOptions = VideoOptions.Builder()
-            .setStartMuted(true)
-            .build()
+                val videoOptions = VideoOptions.Builder()
+                    .setStartMuted(true)
+                    .build()
 
-        val adOptions = NativeAdOptions.Builder()
-            .setVideoOptions(videoOptions)
-            .build()
+                val adOptions = NativeAdOptions.Builder()
+                    .setVideoOptions(videoOptions)
+                    .build()
 
-        builder.withNativeAdOptions(adOptions)
+                builder.withNativeAdOptions(adOptions)
 
-        val adLoader = builder.withAdListener(object : AdListener() {
-            override fun onAdFailedToLoad(errorCode: Int) {
-                adListener(OnAdListener.OnAdFailedToLoad(errorCode, this@NativeAd))
+                val adLoader = builder.withAdListener(object : AdListener() {
+                    override fun onAdFailedToLoad(errorCode: Int) {
+                        adListener(OnAdListener.OnAdFailedToLoad(errorCode, this@NativeAd))
+                    }
+
+                }).withNativeAdOptions(
+                    NativeAdOptions.Builder()
+                        .setRequestCustomMuteThisAd(true)
+                        .setAdChoicesPlacement(when(adChoiceOption){
+                            ChoiceOption.TOP_LEFT -> NativeAdOptions.ADCHOICES_TOP_LEFT
+                            ChoiceOption.TOP_RIGHT -> NativeAdOptions.ADCHOICES_TOP_RIGHT
+                            ChoiceOption.BOTTOM_LEFT -> NativeAdOptions.ADCHOICES_BOTTOM_LEFT
+                            ChoiceOption.BOTTOM_RIGHT -> NativeAdOptions.ADCHOICES_BOTTOM_RIGHT
+                        })
+                        .build()
+                )
+                    .build()
+
+                adLoader.loadAd(AdRequest.Builder().build())
+            }else{
+                view.hideAd()
             }
-
-        }).withNativeAdOptions(
-            NativeAdOptions.Builder()
-                .setRequestCustomMuteThisAd(true)
-                .setAdChoicesPlacement(when(adChoiceOption){
-                    ChoiceOption.TOP_LEFT -> NativeAdOptions.ADCHOICES_TOP_LEFT
-                    ChoiceOption.TOP_RIGHT -> NativeAdOptions.ADCHOICES_TOP_RIGHT
-                    ChoiceOption.BOTTOM_LEFT -> NativeAdOptions.ADCHOICES_BOTTOM_LEFT
-                    ChoiceOption.BOTTOM_RIGHT -> NativeAdOptions.ADCHOICES_BOTTOM_RIGHT
-                })
-                .build()
-        )
-            .build()
-
-        adLoader.loadAd(AdRequest.Builder().build())
+        }
 
     }
 

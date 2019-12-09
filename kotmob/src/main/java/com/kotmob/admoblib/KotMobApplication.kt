@@ -5,10 +5,10 @@ import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 
-abstract class AdsApplication : Application(){
+abstract class KotMobApplication : Application(){
 
     private var mInterstitialAd: InterstitialAd? = null
-    private lateinit var onAdListener : ()-> Unit?
+    private  var onAdListener : ((()-> Unit))? = null
 
     protected fun initInterstitial(adId : String) {
         mInterstitialAd = InterstitialAd(this)
@@ -16,12 +16,12 @@ abstract class AdsApplication : Application(){
 
         mInterstitialAd?.adListener = object : AdListener() {
             override fun onAdFailedToLoad(i: Int) {
-                onAdListener()
+                onAdListener?.invoke()
             }
             override fun onAdClosed() {
                 super.onAdClosed()
                 loadInterstitial()
-                onAdListener()
+                onAdListener?.invoke()
             }
         }
 
@@ -39,12 +39,15 @@ abstract class AdsApplication : Application(){
         }
     }
 
-    fun showInterstitial(listener : ()-> Unit) {
+    fun showInterstitial(listener : (()-> Unit)?) {
         this.onAdListener = listener
         mInterstitialAd?.let {
             if(it.isLoaded){
                 it.show()
+            }else{
+                //loadInterstitial()
+                onAdListener?.invoke()
             }
-        } ?: onAdListener()
+        } ?: onAdListener?.invoke()
     }
 }

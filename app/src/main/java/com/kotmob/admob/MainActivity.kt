@@ -4,8 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import com.kotmob.admoblib.ads.OnAdListener
-import com.kotmob.admoblib.nativeAd
+import com.kotmob.admoblib.kotmobNativeAd
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -19,13 +20,14 @@ class MainActivity : AppCompatActivity() {
 
         fab.setOnClickListener { view ->
             App.instance.showInterstitial {
-
+                Toast.makeText(this , "Loaded" , Toast.LENGTH_SHORT).show()
             }
         }
 
-        nativeAd {
+        kotmobNativeAd  {
             with(this@MainActivity)
             adView(mAd)
+            isLoader(true)
             setAdListener {
                 when (it) {
                     is OnAdListener.OnAdLoaded -> it.bindAdView()

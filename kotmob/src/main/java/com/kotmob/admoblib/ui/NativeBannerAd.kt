@@ -5,11 +5,14 @@ import android.util.AttributeSet
 import android.view.View
 import com.kotmob.admoblib.R
 import com.kotmob.admoblib.exceptions.NativeAdIdRequiredException
+import kotlinx.android.synthetic.main.native_banner_ad.view.*
 import kotlinx.android.synthetic.main.native_banner_ad.view.ad_body
 import kotlinx.android.synthetic.main.native_banner_ad.view.ad_call_to_action
 import kotlinx.android.synthetic.main.native_banner_ad.view.ad_headline
+import kotlinx.android.synthetic.main.native_banner_ad.view.ad_parent_view
 import kotlinx.android.synthetic.main.native_banner_ad.view.progress_bar
 import kotlinx.android.synthetic.main.native_banner_ad.view.uniform
+import kotlinx.android.synthetic.main.native_banner_opt_ad.view.*
 
 
 class NativeBannerAd (context: Context, attrs: AttributeSet): NativeAdView(context, attrs){
@@ -41,4 +44,11 @@ class NativeBannerAd (context: Context, attrs: AttributeSet): NativeAdView(conte
        unifiedNativeAdView = uniform
        attributes.recycle()
    }
+
+    override fun hideAd() {
+        val params = ad_parent_view.layoutParams
+        params.height = resources.getDimensionPixelSize(R.dimen._0dp)
+        ad_parent_view.layoutParams = params
+        invalidate()
+    }
 }
