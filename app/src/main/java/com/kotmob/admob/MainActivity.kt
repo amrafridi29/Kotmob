@@ -5,8 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.kotmob.admoblib.KotMobNativeAd
+import com.kotmob.admoblib.ads.KotMobInterstitial
 import com.kotmob.admoblib.ads.OnAdListener
-import com.kotmob.admoblib.kotmobNativeAd
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -19,12 +20,13 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
-            App.instance.showInterstitial {
+            KotMobInterstitial.showInterstitial {
                 Toast.makeText(this , "Loaded" , Toast.LENGTH_SHORT).show()
             }
+
         }
 
-        kotmobNativeAd  {
+        KotMobNativeAd  {
             with(this@MainActivity)
             adView(mAd)
             isLoader(true)
@@ -35,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             }
         }.load()
 
-       /* nativeAd {
+       /* KotMobNativeAd {
             with(this@MainActivity)
             adView(mAd1)
             setAdListener {
@@ -45,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             }
         }.load()
 
-        nativeAd {
+        KotMobNativeAd {
             with(this@MainActivity)
             adView(mAd2)
             isMedia(false)

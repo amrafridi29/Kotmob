@@ -1,16 +1,13 @@
 package com.kotmob.admob
 
-import com.kotmob.admoblib.KotMobApplication
+import android.app.Application
+import com.kotmob.admoblib.ads.KotMobInterstitial
 
-class App : KotMobApplication(){
-
-    companion object {
-        lateinit var instance: App
-    }
+class App : Application(){
 
     override fun onCreate() {
         super.onCreate()
-        instance = this
-        initInterstitial(getString(R.string.interstitial_ad_id))
+        KotMobInterstitial.initialize(this , getString(R.string.interstitial_ad_id))
+
     }
 }
