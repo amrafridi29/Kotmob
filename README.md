@@ -110,7 +110,7 @@ Kotlin Usage
 ```
 call this in your activity or fragment
 
-nativeAd {
+KotMobNativeAd {
    with(this@MainActivity)
    adView(nativead)
    setAdListener {
@@ -135,20 +135,17 @@ InterstitialAd Usage
 ```
  class App : AdsApplication(){
 
-    companion object {
-        lateinit var instance: App
-    }
 
     override fun onCreate() {
         super.onCreate()
-        instance = this
-        initInterstitial(getString(R.string.interstitial_ad_id))
+         KotMobInterstitial.initialize(this ,interstitial_ad_id)
+
     }
 }
 
 Add this in your activity or fragment
 
-App.instance.showInterstitial {
+KotMobInterstitial.showInterstitial {
     //do whatever you want
     startActivity(Intent(this, StartActivity::class.java))
 }
@@ -163,6 +160,8 @@ Changelog
     * Initial release
 * **0.1.1**
     * Remove Bugs
+* **0.1.3**
+  * Improve interstitial ads loading and offline support
 
 License
 -------
