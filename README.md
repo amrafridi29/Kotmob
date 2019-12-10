@@ -77,21 +77,10 @@ Offline Cross Promotion Ads
 NativAd Usage XML
 -----
 ```xml
-    <com.kotmob.admoblib.ui.NativeBannerOptAd
-        android:id="@+id/nativead"
+   <com.kotmob.admoblib.ui.KotMobNativeAd
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:ad_size="MEDIUM"
-        app:native_ad_id="@string/native_ad_id"/>
-
-    <com.kotmob.admoblib.ui.NativeGridAd
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        app:native_ad_id="@string/native_ad_id"/>
-
-    <com.kotmob.admoblib.ui.NativeBannerAd
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        app:ad_view_type="NATIVE_BANNER_MEDIUM"
         app:native_ad_id="@string/native_ad_id"/>
 
 
@@ -162,6 +151,16 @@ Changelog
     * Remove Bugs
 * **0.1.3**
   * Improve interstitial ads loading and add offline support to native ads loading
+* **0.1.3**
+ * Add xml attributes
+    - ad_background_color
+    - ad_background_drawable
+    - ad_view_type
+        -NATIVE_BANNER
+        -NATIVE_BANER_MEDIUM
+        -NATIVE_BANER_LARGE
+        -NATIVE_GRID
+
 
 License
 -------
