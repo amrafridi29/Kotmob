@@ -151,7 +151,7 @@ Changelog
     * Remove Bugs
 * **0.1.3**
   * Improve interstitial ads loading and add offline support to native ads loading
-* **0.1.3**
+* **0.1.4**
  * Add xml attributes
     - ad_background_color
     - ad_background_drawable
