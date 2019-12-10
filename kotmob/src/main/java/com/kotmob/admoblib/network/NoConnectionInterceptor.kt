@@ -10,7 +10,7 @@ import java.io.IOException
 import java.net.InetSocketAddress
 import java.net.Socket
 
-class NoConnectionInterceptor(private val context: Context){
+internal class NoConnectionInterceptor(private val context: Context){
      fun intercept(isOnline : (Boolean)-> Unit){
          if(isConnectionOn()){
              isInternetAvailable {
@@ -56,6 +56,8 @@ class NoConnectionInterceptor(private val context: Context){
                 uiThread{isAvailable(false)}
            }
        }
+
+
 
     }
 

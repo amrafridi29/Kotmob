@@ -6,13 +6,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ad_parent_view"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginRight="10dp"
-    android:layout_marginBottom="5dp"
     android:elevation="5dp"
     android:orientation="vertical"
-    app:cardBackgroundColor="#ffffff"
     app:cardCornerRadius="5dp"
     app:cardElevation="3dp">
     <ProgressBar
@@ -33,7 +28,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:background="#ffffff"
                 android:orientation="vertical">
 
                 <LinearLayout

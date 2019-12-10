@@ -2,6 +2,8 @@ package com.kotmob.admoblib.ads
 
 import android.content.Context
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -59,6 +61,7 @@ data class NativeAd(
 
         view.context.isOnline {
             if(it){
+                isMedia = view.isMedia
                 if(isLoader){
                     view.visibility = View.VISIBLE
                     view.progressBar?.visibility = View.VISIBLE
@@ -115,7 +118,22 @@ data class NativeAd(
 
     }
 
+    private fun slideDown(view : NativeAdView){
+           val a = AnimationUtils.loadAnimation(context, R.anim.slide_down);
+            if(a != null){
+                a.reset()
+                    view.clearAnimation()
+                    view.startAnimation(a)
+            }
+
+    }
+
     internal fun populateUnifiedNativeAdView() {
+     //   view.animateView(view , 500)
+
+        if(!isLoader){
+            slideDown(view)
+        }
 
         //Media
         if(isMedia) {

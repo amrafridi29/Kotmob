@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AdsLibrary</string>
+    <string name="app_name">Kotmob Native Grid</string>
     <string name="action_settings">Settings</string>
     <string name="url">https://www.google.com</string>
     <string name="title">Ad Title</string>

@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import com.kotmob.admoblib.KotMobNativeAd
 import com.kotmob.admoblib.ads.KotMobInterstitial
 import com.kotmob.admoblib.ads.OnAdListener
@@ -21,14 +20,13 @@ class MainActivity : AppCompatActivity() {
 
         fab.setOnClickListener { view ->
             KotMobInterstitial.showInterstitial {
-                Toast.makeText(this , "Loaded" , Toast.LENGTH_SHORT).show()
-            }
 
+            }
         }
 
-        KotMobNativeAd  {
+        KotMobNativeAd {
             with(this@MainActivity)
-            adView(mAd)
+            adView(mAd1)
             isLoader(true)
             setAdListener {
                 when (it) {
@@ -37,27 +35,8 @@ class MainActivity : AppCompatActivity() {
             }
         }.load()
 
-       /* KotMobNativeAd {
-            with(this@MainActivity)
-            adView(mAd1)
-            setAdListener {
-                when (it) {
-                    is OnAdListener.OnAdLoaded -> it.bindAdView()
-                }
-            }
-        }.load()
 
-        KotMobNativeAd {
-            with(this@MainActivity)
-            adView(mAd2)
-            isMedia(false)
-            adChoicOption(ChoiceOption.BOTTOM_LEFT)
-            setAdListener {
-                when (it) {
-                    is OnAdListener.OnAdLoaded -> it.bindAdView()
-                }
-            }
-        }.load()*/
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

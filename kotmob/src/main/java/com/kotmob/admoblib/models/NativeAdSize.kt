@@ -1,6 +1,6 @@
 package com.kotmob.admoblib.models
 
-enum class NativeAdSize{
+internal enum class NativeAdSize{
     MEDIUM,
     LARGE
 }

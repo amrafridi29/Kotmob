@@ -15,43 +15,18 @@
         <attr name="ad_title" format="string|reference" localization="suggested" />
         <attr name="ad_body" format="string|reference" localization="suggested" />
         <attr name="ad_button_text" format="string|reference" localization="suggested" />
+        <attr name="ad_background_color" format="color|reference" localization="suggested" />
+        <attr name="ad_background_drawable" format="reference" localization="suggested" />
 
-        <attr name="ad_size">
-            <enum name="MEDIUM" value="0" />
-            <enum name="LARGE" value="1" />
+
+        <attr name="ad_view_type">
+            <enum name="NATIVE_BANNER" value="0"/>
+            <enum name="NATIVE_BANNER_MEDIUM" value="1"/>
+            <enum name="NATIVE_BANNER_LARGE" value="2"/>
+            <enum name="NATIVE_GRID" value="3"/>
         </attr>
     </declare-styleable>
 
-
-    <declare-styleable name="NativeBannerOptAd">
-        <attr name="button_shape" />
-        <attr name="button_text_color" />
-        <attr name="headline_text_color" />
-        <attr name="body_text_color" />
-        <attr name="is_body" />
-        <attr name="native_ad_id" />
-        <attr name="ad_size"/>
-    </declare-styleable>
-
-    <declare-styleable name="NativeBannerAd">
-        <attr name="button_shape" />
-        <attr name="button_text_color" />
-        <attr name="headline_text_color" />
-        <attr name="body_text_color" />
-        <attr name="is_body" />
-        <attr name="native_ad_id" />
-
-    </declare-styleable>
-
-    <declare-styleable name="NativeGridAd">
-        <attr name="button_shape" />
-        <attr name="button_text_color" />
-        <attr name="headline_text_color" />
-        <attr name="body_text_color" />
-        <attr name="is_body" />
-        <attr name="native_ad_id" />
-
-    </declare-styleable>
 
 
     <declare-styleable name="OfflineNativeAd">
@@ -86,6 +61,18 @@
         <attr name="ad_body" />
         <attr name="ad_button_text"/>
 
+    </declare-styleable>
+
+    <declare-styleable name="KotMobNativeAd">
+        <attr name="button_shape" />
+        <attr name="button_text_color" />
+        <attr name="headline_text_color" />
+        <attr name="body_text_color" />
+        <attr name="is_body" />
+        <attr name="native_ad_id" />
+        <attr name="ad_view_type"/>
+        <attr name="ad_background_color"/>
+        <attr name="ad_background_drawable"/>
     </declare-styleable>
 
     <declare-styleable name="BannerAd">

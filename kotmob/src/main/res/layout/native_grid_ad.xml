@@ -5,8 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ad_parent_view"
     android:layout_height="match_parent"
-    android:layout_margin="5dp"
-    android:background="@color/white"
     android:elevation="3dp"
     app:cardCornerRadius="5dp"
     app:cardElevation="4dp">
